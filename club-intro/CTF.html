@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <body>
+        <!-- flag{13tHCygShIRc#%=@} -->
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CTF體驗</title>
+            <link rel="stylesheet" type="text/css" href="css.css" />
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@426&display=swap');
+            </style>
+        </head>
+        <header style="
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            z-index: 1000;
+            background-color: rgb(7, 7, 7);
+            border-bottom: 1px solid gray;
+            
+            ">
+            <div style="padding-left: 120px;width:50% ">
+                <div class="header"style="text-shadow: 0 0 20px chartreuse;font-family:Pixelify Sans, sans-serif;">
+                    <span style="color:chartreuse">Print</span><span style="color:chartreuse">(</span><span style="color: chartreuse;">"CYGSH_IRC_13th"</span><span style="color:chartreuse">)</span>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;align-items: center;width:50%;padding-right: 50px;">
+                <div class="intro">首頁</div>
+                <div class="intro">課程規劃</div>
+                <div class="intro">CTF體驗</div>
+            </div>
+        </header>
+        <div  style="padding:200px">
+            <div id="stage1" style="justify-items: center;">
+                
+                <div style="color:chartreuse;margin-bottom: 20px;font-size: 40px;">
+                    仔細找找看 密碼就藏在這個網頁之中！
+                </div>
+                <form style="justify-items: center;border-radius: 10px;margin: 50px;">
+                <input id="weeew" placeholder="Flag{...}" style="font-size: 30px;padding-bottom:5px;text-align: center;">
+                </form>
+                <div class="btn" onclick="wah()" style="cursor: pointer;" onmouseover="over(this)" onmouseout="out(this)" onmousedown="down(this)"
+                onmouseup="up(this)">
+                    提交答案
+                </div>
+                <div id="suc" style="display: none;color:rgb(254, 254, 254);font-size: 20px;margin-top: 50px">將密碼寫在原始碼中,很容易就被找出來</div>
+                <div id="fail" style="display:none;color:red;font-size: 20px;margin-top: 50px;">密碼好像不是這個,再找找看吧</div>
+            </div>
+            
+        </div>
+        <script>
+            let wah=function(){
+            const stage=document.querySelector('#stage1')
+            const suc=document.querySelector("#suc")
+            const fail=document.querySelector("#fail")
+            const stage2=document.querySelector("stage2")
+            const ans=document.getElementById("weeew")
+            const result=ans.value
+
+            if(result=="flag{13tHCygShIRc#%=@}"){
+
+                if(fail.style.display="block"){
+                    fail.style.display="none"
+                    suc.style.display="block"
+                setTimeout(()=>{
+                    suc.style.display="none"
+                    stage.style.display="none"
+                    window.location.replace("ctf2.html")
+                },3000)
+                }else{
+                    suc.style.display="block"
+                setTimeout(()=>{
+                    suc.style.display="none"
+                    stage.style.display="none"
+                    window.location.replace("CTF2.html")
+                },3000)
+                }
+
+            }else{
+
+                fail.style.display="block"
+                setTimeout(()=>{
+                    fail.style.display="none"
+                },2000)
+            }
+            }
+            function over(event){
+                event.style.backgroundColor="#63ab1b"
+
+            }
+            function out(event){
+                event.style.backgroundColor="#7fff00"
+            }
+            function down(event){
+                event.style.fontWeight="bold"
+                
+            }
+            function up(event){
+                event.style.fontWeight="normal"
+            }
+        </script>
+    </body>
+</html>

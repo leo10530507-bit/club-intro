@@ -1,0 +1,128 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CTF體驗</title>
+        <link rel="stylesheet" type="text/css" href="css.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&display=swap');
+        </style>
+    </head>
+    
+    <body>
+        <header style="
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        z-index: 1000;
+        background-color: rgb(7, 7, 7);
+        border-bottom: 1px solid gray;
+        
+        ">
+            <div style="padding-left: 120px;width:50% ">
+                <div class="header"style="text-shadow: 0 0 20px chartreuse;font-family:Pixelify Sans, sans-serif;">
+                    <span style="color:chartreuse">Print</span><span style="color:chartreuse">(</span><span style="color: chartreuse;">"CYGSH_IRC_13th"</span><span style="color:chartreuse">)</span>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;align-items: center;width:50%;padding-right: 50px;">
+                <div class="intro">首頁</div>
+                <div class="intro">課程規劃</div>
+                <div class="intro">CTF體驗</div>
+            </div>
+        </header>
+        <div style="justify-items: center;">
+            <div id="info" style="margin-top:247px;color: white;font-size: 20px;">
+                <div>Account : Sa'Kan</div>
+                <div>Password : WH40000</div>
+            </div>
+            <div id="falseAlarm" style="color:red;margin-top:247px;display: none;">帳號或密碼錯誤</div>
+            <div></div>
+            <div id="input" class="CTF2chunck" style="margin-top: 30px;">
+                <div style="margin-top: 20px;margin-bottom: 10px;">    
+                    <label style="font-size: 25px;" >帳號</label>
+                    <input id="account" style="font-size: 25px;border-radius: 5px;border:2px solid black">
+                </div>
+                <div>
+                    <label style="font-size: 25px;">密碼</label>
+                    <input id="password" type="password" style="font-size: 25px;border-radius: 5px;border:2px solid black">
+                </div>
+                <div class="CTF2Send" onclick="ap()" style="cursor: pointer;" onmouseover="over(this)" onmouseout="out(this)" onmousedown="down(this)"
+                onmouseup="up(this)">送出</div>
+            </div>
+            <div class="CTF2chunck" style="margin-top: 20px;">
+                <div style="margin-top: 10px;display: flex;" >
+                    <input id="flag" placeholder="Flag{...}" style="font-size: 20px;border:1px solid black">
+                    <div onclick="ans();" style="margin-left: 20px;background-color: chartreuse;padding-left: 15px;padding-right: 15px;border-radius: 10px;padding-top:5px;padding-bottom: 5px;cursor: pointer;" onmouseover="over(this)" onmouseout="out(this)" onmousedown="down(this)"
+                onmouseup="up(this)">提交</div>
+                </div>
+                <div id="flagAlarm" style="color:red;margin-top:5px;display: none;">Flag錯誤,請再試一次</div>
+            </div>
+        </div>
+        <script>
+
+
+            function ap(){
+            const info=document.getElementById("info")
+            const input=document.getElementById("input")
+            const fA=document.getElementById("falseAlarm")
+            const account=document.getElementById("account")
+            const password=document.getElementById("password")
+            const accountValue=account.value
+            const passwordValue=password.value
+            if(accountValue=="Sa'Kan" && passwordValue=="WH40000"){
+                window.location.href="ap.html"
+            }else{
+                fA.style.display="block"
+                info.style.display="none"
+                input.style.marginTop="30px"
+                setTimeout(()=>{
+                    fA.style.display="none"
+                    info.style.display="block"
+                    input.style.marginTop="30px"
+                    
+                },1200)
+            }
+            }
+
+            function ans(){
+                const flag=document.getElementById("flag")
+                const flagAlarm=document.getElementById("flagAlarm")
+                const result=flag.value
+
+                if(result=="flag{J@!n_CyGSh_IRC=!}"){
+                    window.location.replace("stage3.html")
+                    console.log("success")
+                }else{
+                    flagAlarm.style.display="block"
+                    setTimeout(()=>{
+                    flagAlarm.style.display="none"
+
+
+                },1200)
+                }
+            }
+
+            function over(event){
+                event.style.backgroundColor="#63ab1b"
+
+            }
+            function out(event){
+                event.style.backgroundColor="#7fff00"
+            }
+            function down(event){
+                event.style.fontWeight="bold"
+                
+            }
+            function up(event){
+                event.style.fontWeight="normal"
+            }
+
+
+        </script>
+    </body>
+</html>

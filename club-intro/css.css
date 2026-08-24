@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.header{
+    font-family: verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}   
+.test{
+    border:1px solid chartreuse
+
+}
+.intro{
+    
+    font-size: 20px;
+    font-family: verdana, sans-serif;
+    color:rgb(180, 180, 180);
+    cursor:pointer;
+    margin-right: 70px;
+}
+
+.cfa{
+    justify-content: flex-end;
+    color:rgb(180, 180, 180)
+}
+.chunck{
+    
+    background-color: rgba(127, 255, 0, 0.1);
+    margin: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding-top:20px;
+    padding-bottom:25px;
+    padding-left:30px;
+    padding-right:30px;
+    border:5px solid rgb(62, 121, 3);
+    
+}
+
+.title{
+    font-size:50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Impact,sans-serif ;
+    color:chartreuse;
+    
+}
+
+.content{
+    font-size:20px;
+    font-family: Impact,sans-serif;
+    line-height:1.5;
+    color: springgreen;
+}
+.btn{
+    background-color: #7fff00;
+    color:black;padding: 10px;
+    border-radius: 10px;
+    margin:20px;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+input::placeholder{
+    font-size: 20px;
+    text-align: center;
+    ;
+    
+}
+.CTF2Send{
+    background-color: chartreuse;
+    font-size: 25px;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+
+}
+.CTF2chunck{
+    border:5px solid rgb(73, 73, 73);
+    background-color: rgb(134, 133, 133);
+    width: 500px;border-radius: 20px;
+    justify-items: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.img {
+  max-width:10%;
+  object-fit: cover;
+}
