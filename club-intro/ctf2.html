@@ -5,8 +5,7 @@
         <title>CTF體驗</title>
         <link rel="stylesheet" type="text/css" href="css.css" />
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&display=swap');
+           @import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Jersey+10&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Pixelify+Sans&display=swap');
             body{
                 background-color:#050807;
                 color:white;
@@ -66,18 +65,18 @@
             <div id="input" class="CTF2chunck" style="margin-top: 30px;">
                 <div style="margin-top: 20px;margin-bottom: 10px;">    
                     <label style="font-size: 25px;" >帳號</label>
-                    <input id="account" style="font-size: 25px;border-radius: 5px;border:2px solid black">
+                    <input id="account" autocomplete="off" style="font-size: 25px;border-radius: 5px;border:2px solid black">
                 </div>
                 <div>
                     <label style="font-size: 25px;">密碼</label>
-                    <input id="password" type="password" style="font-size: 25px;border-radius: 5px;border:2px solid black">
+                    <input id="password" autocomplete="off" type="password" style="font-size: 25px;border-radius: 5px;border:2px solid black">
                 </div>
                 <div class="CTF2Send" onclick="ap()" style="cursor: pointer;" onmouseover="over(this)" onmouseout="out(this)" onmousedown="down(this)"
                 onmouseup="up(this)">送出</div>
             </div>
             <div class="CTF2chunck" style="margin-top: 20px;">
                 <div style="margin-top: 10px;display: flex;" >
-                    <input id="flag" placeholder="Flag{...}" style="font-size: 20px;border:1px solid black">
+                    <input id="flag" autocomplete="off" placeholder="Flag{...}" style="font-size: 20px;border:1px solid black">
                     <div onclick="ans();" style="margin-left: 20px;background-color: chartreuse;padding-left: 15px;padding-right: 15px;border-radius: 10px;padding-top:5px;padding-bottom: 5px;cursor: pointer;" onmouseover="over(this)" onmouseout="out(this)" onmousedown="down(this)"
                 onmouseup="up(this)">提交</div>
                 </div>
